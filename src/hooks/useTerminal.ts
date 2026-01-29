@@ -8,13 +8,21 @@ export type Line = {
 
 export function useTerminal() {
     const [lines, setLines] = useState<Line[]>([
-        { type: "output", content: "Type `help` to begin." },
+        { type: "output", content: "Welcome to NEON-CLI ⚡" },
+        { type: "output", content: "Type `help` to see available commands." },
     ]);
 
     function execute(input: string) {
+        if (!input.trim()) return;
+
         const [cmd, ...args] = input.trim().split(" ");
 
         setLines((prev) => [...prev, { type: "input", content: input }]);
+
+        if (cmd === "clear" || cmd === "cls") {
+            setLines([]);
+            return;
+        }
 
         if (!commands[cmd]) {
             setLines((prev) => [
@@ -30,9 +38,5 @@ export function useTerminal() {
         }
     }
 
-    function clear() {
-        setLines([]);
-    }
-
-    return { lines, execute, clear };
+    return { lines, execute };
 }

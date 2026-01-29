@@ -1,12 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --bg: 10 10 15;
+  --bg: 8 10 18;            /* deep cyberpunk navy */
   --glass: 255 255 255;
-  --neon: 88 166 255;
+  --neon: 56 189 248;       /* cyan neon */
+  --text: 226 232 240;      /* slate-200 */
 }
 
-
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+  font-family: "Google Sans Code", ui-monospace, monospace;
+}
 
 
 /* :root {
