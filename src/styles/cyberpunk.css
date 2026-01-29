@@ -1,0 +1,13 @@
+.glass {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 0 40px rgba(88,166,255,0.15),
+    inset 0 0 20px rgba(255,255,255,0.05);
+}
+
+.neon-text {
+  color: rgb(var(--neon));
+  text-shadow: 0 0 12px rgba(88,166,255,0.8);
+}
